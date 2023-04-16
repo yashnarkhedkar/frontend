@@ -61,7 +61,7 @@ export default {
         submitForm(ruleForm) {
             this.$refs[ruleForm].validate((valid) => {
                 if (valid) {
-                    Vue.axios.get("http://localhost:5000/add_user", {
+                    Vue.axios.get("https://login-app1.onrender.com/add_user", {
                         params: this.ruleForm
                     }, { withCredentials: true })
                     .then((res) => {

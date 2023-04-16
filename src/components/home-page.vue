@@ -35,7 +35,7 @@ export default {
         }
     },
     mounted() {
-        Vue.axios.get('http://localhost:5000/allusers')
+        Vue.axios.get('https://login-app1.onrender.com/allusers')
             .then((res) => {
                 this.tableData = res.data
         }),
