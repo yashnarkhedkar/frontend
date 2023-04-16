@@ -2,9 +2,12 @@
   <div id="app">
     <router-view></router-view>
     <div id="code">
-        <el-link href="https://github.com/yashnarkhedkar/Login-App" target="_blank">
-            <el-button type="primary" icon="el-icon-link">Code</el-button>
-        </el-link>
+      <el-link class="links" href="https://github.com/yashnarkhedkar/Frontend" target="_blank">
+        <el-button type="primary" icon="el-icon-link">FrontEnd</el-button>
+      </el-link>
+      <el-link class="links" href="https://github.com/yashnarkhedkar/backend" target="_blank">
+        <el-button type="primary" icon="el-icon-link">Backend</el-button>
+      </el-link>
     </div>
   </div>
 </template>
@@ -28,9 +31,14 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 #code {
-    position: absolute;
-    bottom : 20px;
-    right : 20px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.links{
+  margin: 0 10px;
 }
 </style>
