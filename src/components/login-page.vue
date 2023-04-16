@@ -67,17 +67,16 @@ export default {
                         headers: headersList,
                         data: bodyContent,
                     }
-
-                    let res = await axios.request(reqOptions);
-                    console.log(res);
-
-                    const token = res.data.token;
-                    if(res.data.message == "Login successful."){
-                        localStorage.setItem('token', token);
-                        this.$router.push({ path: '/', props: true });
-                        this.open1()
-                    } else if(res.status(401)){
-                        this.open4()
+                    try {
+                        let res = await axios.request(reqOptions);
+                        const token = res.data.token;
+                        if (res.status === 200 && res.data.message == "Login successful.") {
+                            localStorage.setItem('token', token);
+                            this.$router.push({ path: '/', props: true });
+                            this.open1()
+                        } 
+                    } catch (error) {
+                        this.open4();
                     }
                 } else {
                     console.log('error submit!!');
