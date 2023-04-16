@@ -76,7 +76,7 @@ export default {
                         localStorage.setItem('token', token);
                         this.$router.push({ path: '/', props: true });
                         this.open1()
-                    } else{
+                    } else if(res.status(401)){
                         this.open4()
                     }
                 } else {
