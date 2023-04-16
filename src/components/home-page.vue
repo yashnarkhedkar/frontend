@@ -11,7 +11,7 @@
         </el-table>
         <div id="upper">
             <h4 id="email">Email : {{ this.user.email }} </h4>
-            <el-button @click="logout">Logout</el-button>
+            <el-button type="danger" @click="logout">Logout</el-button>
         </div>
     </div>
 </template>

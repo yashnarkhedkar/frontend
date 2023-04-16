@@ -114,4 +114,10 @@ export default {
     width: 1/2rem;
     height: 400px;
 }
+#code {
+    position: absolute;
+    bottom : 20px;
+    right : 20px;
+}
+
 </style>

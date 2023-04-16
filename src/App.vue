@@ -1,6 +1,11 @@
 <template>
   <div id="app">
     <router-view></router-view>
+    <div id="code">
+        <el-link href="https://github.com/yashnarkhedkar/Login-App" target="_blank">
+            <el-button type="primary" icon="el-icon-link">Code</el-button>
+        </el-link>
+    </div>
   </div>
 </template>
 
@@ -22,5 +27,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+#code {
+    position: absolute;
+    bottom : 20px;
+    right : 20px;
 }
 </style>
