@@ -3,10 +3,10 @@
         <h1>Log in</h1>
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="120px" class="demo-ruleForm">
             <el-form-item label="Email" prop="email">
-                <el-input type="email" v-model="ruleForm.email"></el-input>
+                <el-input type="email" v-model="ruleForm.email" name="username"></el-input>
             </el-form-item>
             <el-form-item label="Password" prop="password">
-                <el-input v-model="ruleForm.password" autocomplete="off"></el-input>
+                <el-input v-model="ruleForm.password" autocomplete="off" name="password"></el-input>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="submitForm('ruleForm')">Login</el-button>
@@ -69,12 +69,13 @@ export default {
                     }
                     try {
                         let res = await axios.request(reqOptions);
+                        console.log(res)
                         const token = res.data.token;
                         if (res.status === 200 && res.data.message == "Login successful.") {
                             localStorage.setItem('token', token);
                             this.$router.push({ path: '/', props: true });
                             this.open1()
-                        } 
+                        }
                     } catch (error) {
                         this.open4();
                     }
